@@ -1,5 +1,5 @@
 :root {
-  // DRAFT: https://www.w3.org/TR/css-color-adjust-1/
+  /* DRAFT: https://www.w3.org/TR/css-color-adjust-1/ */
   color-scheme: light dark;
   --titlebar-color: #82afff;
   --episode-title-color: #fff;
