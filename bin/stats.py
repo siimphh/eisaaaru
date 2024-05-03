@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import collections
 import os
@@ -25,10 +25,15 @@ def main():
         parts = l.split(' ')
         url = os.path.basename(parts[0])
         download_count = int(parts[1])
-        downloads[url] += download_count
+        m = re.match(r'.*?([0-9]+).mp3', url)
+        if not m:
+          # print(f'unexpected attempt: {l}')
+          continue
+        episode = int(m.group(1))
+        downloads[episode] += download_count
 
-  for url in sorted(downloads.keys(), key=lambda f: int(re.match(r'.*?([0-9]+).mp3', f).group(1)), reverse=True):
-    print('%s %d' % (url, downloads[url]))
+  for episode in sorted(downloads.keys(), reverse=True):
+    print('/audio/eisaaaru%d.mp3 %d' % (episode, downloads[episode]))
 
 
 if __name__ == '__main__':
