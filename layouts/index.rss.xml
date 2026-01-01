@@ -5,10 +5,10 @@
   xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
 >
   <channel>
-    <atom:link href="{{ .Site.BaseURL }}/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ absURL "index.xml" }}" rel="self" type="application/rss+xml" />
     <title>{{ .Site.Title }}</title>
     <author>{{ .Site.Params.Email }}</author>
-    <link>{{ .Site.BaseURL }}</link>
+    <link>{{ absURL "" }}</link>
     <description>{{ .Site.Params.Description }}</description>
     <language>{{ .Site.Language.Lang }}</language>
     <!-- itunes -->
@@ -30,18 +30,18 @@
       <itunes:email>{{ .Site.Params.Email }}</itunes:email>
     </itunes:owner>
     <itunes:author>{{ .Site.Params.Author }}</itunes:author>
-    <itunes:image href="{{ .Site.BaseURL }}/images/eisaaaru7.jpg"></itunes:image>
+    <itunes:image href="{{ absURL "images/eisaaaru7.jpg" }}"></itunes:image>
     <!-- googleplay -->
     <googleplay:author>{{ .Site.Params.Author }}</googleplay:author>
     <googleplay:email>{{ .Site.Params.Email }}</googleplay:email>
     <googleplay:description>{{ .Site.Params.Description }}</googleplay:description>
-    <googleplay:image href="{{ .Site.BaseURL }}/images/eisaaaru7.jpg"></googleplay:image>
+    <googleplay:image href="{{ absURL "images/eisaaaru7.jpg" }}"></googleplay:image>
     {{ range .Site.Pages }}
       {{ if .Params.Audio }}
         <item>
           <title>{{ .Title }}</title>
           <author>{{ .Site.Params.Email }}</author>
-          <enclosure url="{{ .Site.BaseURL }}/audio/{{ .Params.Audio }}" length="{{ .Params.Audio_Length }}" type="audio/mpeg" />
+          <enclosure url="{{ absURL "audio" }}/{{ .Params.Audio }}" length="{{ .Params.Audio_Length }}" type="audio/mpeg" />
           <description>
             {{- .Params.Description }}
           </description>

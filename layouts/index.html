@@ -8,9 +8,9 @@
   <p>
     Lisa meid oma podcasti äpis:<br>
     <ul>
-      <li><a href="https://itunes.apple.com/us/podcast/ei-saa-aru/id1424289028"><img class="banner" src="{{ .Site.BaseURL }}/images/apple-podcasts-x40.png" alt="Listen on Apple Podcast"/></a>
-      <li><a href="https://open.spotify.com/show/6wSMEMko0DorsAqGtZiySb"><img class="banner" src="{{ .Site.BaseURL }}/images/spotify-podcast-badge-blk-grn-165x40.png" alt="Listen on Spotify"/></a>
-      <li>Või lisa otse <a href="index.xml">RSS</a> ehk <span class="pre">{{ .Site.BaseURL }}/index.xml</span>.
+      <li><a href="https://itunes.apple.com/us/podcast/ei-saa-aru/id1424289028"><img class="banner" src="{{ absURL "images/apple-podcasts-x40.png" }}" alt="Listen on Apple Podcast"/></a>
+      <li><a href="https://open.spotify.com/show/6wSMEMko0DorsAqGtZiySb"><img class="banner" src="{{ absURL "images/spotify-podcast-badge-blk-grn-165x40.png" }}" alt="Listen on Spotify"/></a>
+      <li>Või lisa otse <a href="index.xml">RSS</a> ehk <span class="pre">{{ absURL "index.xml" }}</span>.
     </ul>
   <p>
   <p>
@@ -30,7 +30,7 @@
       </div>
       <div class="player">
         <audio controls preload="metadata">
-          <source src="{{ .Site.BaseURL }}/audio/{{ .Params.Audio }}" type="audio/mpeg">
+          <source src="{{ absURL "audio" }}/{{ .Params.Audio }}" type="audio/mpeg">
         </audio>
       </div>
       <div class="episode-content">

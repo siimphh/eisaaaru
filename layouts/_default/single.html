@@ -4,7 +4,7 @@
   </div>
   <div class="player">
     <audio controls preload="metadata">
-      <source src="{{ .Site.BaseURL }}/audio/{{ .Params.Audio }}" type="audio/mpeg">
+      <source src="{{ absURL "audio" }}/{{ .Params.Audio }}" type="audio/mpeg">
     </audio>
   </div>
   <div class="episode-content">
